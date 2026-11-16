@@ -1,0 +1,6 @@
+{
+  "name": "Cadence — Daily Tracker",
+  "description": "A personal daily tracker for habits, priorities, focus sessions, daily vitals, and reflections.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
