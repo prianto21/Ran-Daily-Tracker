@@ -10,6 +10,9 @@ import { DataModal } from './components/DataModal';
 import { HabitModal } from './components/HabitModal';
 import { HabitsView } from './components/HabitsView';
 import { JournalView } from './components/JournalView';
+import { MobileBottomNav } from './components/MobileBottomNav';
+import { OfflineIndicator } from './components/OfflineIndicator';
+import { PWAInstallButton } from './components/PWAInstallButton';
 import { Sidebar } from './components/Sidebar';
 import { TodayView } from './components/TodayView';
 import { useTrackerStore } from './hooks/useTrackerStore';
@@ -114,7 +117,7 @@ export default function App() {
 
       <div className="flex min-w-0 flex-1 flex-col">
         {/* Top Workspace Header */}
-        <header className="sticky top-0 z-30 flex items-center justify-between gap-4 border-b border-slate-200 bg-white/95 px-4 py-3.5 backdrop-blur-xs sm:px-6 lg:px-8 dark:border-slate-800 dark:bg-slate-900/95">
+        <header className="sticky top-0 z-30 flex items-center justify-between gap-3 border-b border-slate-200 bg-white/95 px-4 py-2.5 backdrop-blur-xs sm:px-6 lg:px-8 lg:py-3.5 dark:border-slate-800 dark:bg-slate-900/95">
           <div className="flex min-w-0 items-center gap-3">
             <button
               type="button"
@@ -179,6 +182,8 @@ export default function App() {
               </button>
             </div>
 
+            <PWAInstallButton variant="header" />
+
             <button
               type="button"
               onClick={openCreateHabit}
@@ -191,7 +196,7 @@ export default function App() {
         </header>
 
         {/* Main Viewport */}
-        <main className="mx-auto w-full max-w-[1200px] flex-1 px-4 py-6 sm:px-6 lg:px-8">
+        <main className="mx-auto w-full max-w-[1200px] flex-1 px-4 pt-5 pb-24 sm:px-6 lg:px-8 lg:py-6">
           {activeView === 'today' && (
             <TodayView
               selectedDate={selectedDate}
@@ -280,6 +285,9 @@ export default function App() {
         onResetSample={resetToSampleData}
         onClearAll={clearAllData}
       />
+
+      <MobileBottomNav activeView={activeView} onSelectView={setActiveView} />
+      <OfflineIndicator />
     </div>
   );
 }

@@ -11,6 +11,7 @@ import {
   Sun,
   X,
 } from 'lucide-react';
+import { PWAInstallButton } from './PWAInstallButton';
 import type { DayRecord, Habit, ViewMode } from '../types/tracker';
 import {
   getMonthCalendarDays,
@@ -216,6 +217,7 @@ export function Sidebar({
 
       {/* Bottom Utility Controls */}
       <div className="space-y-1 border-t border-slate-200 pt-4 dark:border-slate-800">
+        <PWAInstallButton variant="sidebar" />
         <button
           type="button"
           onClick={onToggleTheme}
